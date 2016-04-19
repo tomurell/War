@@ -3,7 +3,7 @@ var roboBold;
 var roboRegular;
 var title = "The World at War"
 var date = "1823 - 2003"
-var description = "Based on data from the Correlates of War project\n [correlatesofwar.org], this project looks at conflicts\n between nations and their allegiances over nearly two centuries.\n \n  Northeastern University // ARTG6100\n Thomas Urell // Spring 2016";
+var description = "Based on data from the Correlates of War project\n[correlatesofwar.org], this project looks at conflicts between\nnations and their allegiances over nearly two centuries.\n \nNortheastern University // ARTG6100\nThomas Urell // Spring 2016";
 var table_wars;
 var linenumbers = {};
 var battles = {};
