@@ -1,4 +1,5 @@
-# War
+#The World at War : 1823-2003
+
 Correlates of War visualization
 
 Coursework for ARTG6110 Information Design Studio II
