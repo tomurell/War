@@ -168,8 +168,6 @@ function setup() {
 function draw() {
     background(0, 0, 100, 100);
 
-    frames();
-
     timeline();
 
     baseMap.forEach(function (b) {
@@ -185,19 +183,6 @@ function draw() {
     collision();
 
     introBox();
-}
-
-function frames() {
-    noStroke();
-    fill(350, 2, 40, 100);
-    rect(0, 0, width, height);
-
-    fill(0, 0, 100, 100);
-    rect(width * .005
-        , height * .005
-        , width * .99
-        , height * .99
-        , 1);
 }
 
 //+~+~+~+~+~+~+~+~+~+~+~+~+~++~+~+~+~+~+~+~+~+~+~+~+~+~+~+~+~+~+~+~+~+~+~+~+~+~+~+~+~+~+~+~+~+~+~+~+~+~
@@ -333,15 +318,15 @@ function introBox() {
 //COUNTRIES
 var Country = function (name, code, population, lon, lat) {
     if (width > 1250) {
-        this.population = sqrt(population * 90) * .000425;
-        this.lon = (lon * 4.75) + height * 0.7;
-        this.lat = (lat * 4) + width * 0.365;
+        this.population = sqrt(population * 85) * .0006;
+        this.lon = (lon * 5.5) + height * 0.625;
+        this.lat = (lat * 4.75) + width * 0.365;
         this.pos = createVector(this.lat, this.lon);
         this.boxSize = createVector(this.population * 1.8, this.population * 0.8);
     } else {
-        this.population = sqrt(population * 90) * .0003;
-        this.lon = (lon * 2.5) + height * 0.65;
-        this.lat = (lat * 2.5) + width * 0.35;
+        this.population = sqrt(population * 55) * .00045;
+        this.lon = (lon * 3.95) + height * 0.65;
+        this.lat = (lat * 3.05) + width * 0.35;
         this.pos = createVector(this.lat, this.lon);
         this.boxSize = createVector(this.population * 1.8, this.population * 0.9);
     }
@@ -425,7 +410,7 @@ var Country = function (name, code, population, lon, lat) {
         for (var i = 0; i < warCountries.length; i++) {
             var myWar = function () {
                 if (warCountries[i].country == instance.name) {
-                    theseWars.push(warCountries[i].start + ": " + warCountries[i].warName);
+                    theseWars.push(warCountries[i].start + " " + warCountries[i].warName);
                     theseDeaths += warCountries[i].deaths;
                     return warCountries[i].warName;
                 }
@@ -527,7 +512,7 @@ var Bar = function (name, participants) {
     this.startDate = myFlags[0].startDate;
     this.endDate = myFlags[0].endDate;
     this.warDuration = (this.endDate - this.startDate) * 2;
-    this.barSize = createVector(2, sqrt(sqrt(this.deathTot)) * (height * .00275));
+    this.barSize = createVector(1, sqrt(sqrt(this.deathTot)) * (height * .00275));
     this.pos = createVector((map(this.startDate, 1820, 2003, width * .0225, width * .478))
         , height * .125 - (this.barSize.y / 2));
 
@@ -592,7 +577,7 @@ var Bar = function (name, participants) {
         isMouseOver = collidePointRect(mouseX, mouseY
             , instance.pos.x
             , instance.pos.y
-            , instance.barSize.x
+            , instance.barSize.x + 10
             , instance.barSize.y);
     }
 
@@ -605,7 +590,7 @@ var Flag = function (country, cSide, batDeaths, startDate, endDate) {
     this.startDate = getDecimalDate(startDate);
     this.endDate = getDecimalDate(endDate);
 
-    this.size = sqrt(this.deaths) * 0.075;
+    this.size = sqrt(this.deaths) * 0.15;
     var color = map(this.side, 1, 2, 0, 100);
     this.pos = getCountryCenter(this.country);
     this.warDuration = (this.endDate - this.startDate) * 4;
@@ -619,6 +604,7 @@ var Flag = function (country, cSide, batDeaths, startDate, endDate) {
 }
 
 function timeline() {
+    noStroke();
     var textY = (height * .02);
     textFont(roboBold);
     fill(350, 1, 70, 100);

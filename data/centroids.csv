@@ -98,8 +98,8 @@ lat,lng,country_name,country_code,population
 48,68,Kazakhstan,KAZ,17289111
 1,38,Kenya,KEN,44863583
 -5,-170,Kiribati,KIR,110470
-40,127,North Korea,PRK,25026772
-37,127.5,South Korea,KOR,50423955
+40,140,North Korea,PRK,25026772
+37,141,South Korea,KOR,50423955
 42.583333,21,Kosovo,KSV,1823149
 29.5,47.75,Kuwait,KWT,3753121
 41,75,Kyrgyz Republic,KGZ,5834200
@@ -126,7 +126,7 @@ lat,lng,country_name,country_code,population
 23,-102,Mexico,MEX,125385833
 47,29,Moldova,MDA,3556400
 43.733333,7.4,Monaco,MCO,37623
-46,105,Mongolia,MNG,2909871
+60,105,Mongolia,MNG,2909871
 42.5,19.3,Montenegro,MNE,621800
 32,-5,Morocco,MAR,33921203
 -18.25,35,Mozambique,MOZ,27216276
