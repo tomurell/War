@@ -2,7 +2,7 @@
 
 Correlates of War visualization
 
-Coursework for ARTG6110 Information Design Studio II
+Coursework for ARTG6100 Information Design Studio II
 
 Spring 2016 
 
